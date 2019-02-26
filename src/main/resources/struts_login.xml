@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+    "http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+   <!-- 配置请求action时的扩展名 -->
+   <constant name="struts.action.extension" value="action,do"></constant>
+   <!-- 包(与Java类的包功能一样) -->
+   <package name="user"  extends="struts-default">
+       <!--登陆  -->
+       <action name="loginAction"  class="com.huaxin.ztree.controller.UserController" method="login">
+          <!-- 管理员页面  -->
+          <result name="success" >main.jsp</result>
+          <!-- 登陆不成功跳回登陆页面 -->
+           <result name="login" >index.jsp</result>
+           <!--学生界面  -->
+          <result name="input" >student.jsp</result>
+       </action>
+       
+   </package>
+</struts>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+    "http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+     <!-- 配置请求action时的扩展名 -->
+    <constant name="struts.action.extension" value="action,do"></constant>
+    <!-- 引入其它文件 -->
+    <include file="test.xml"></include>
+    <include file="struts_login.xml"></include>
+    <!--菜单栏引入xml  -->
+   <include file="ztree.xml"></include>
+   <!--用户管理XML  -->
+   <include file="struts_user.xml"></include>
+    <!-- 引入xml模块 -->
+    <include file="struts_question.xml"/>
+<!--  刘宇翔增删改查-->
+ 	<include file="userInfo.xml"/>
+ 	<include file="struts_paper.xml"/>
+
+
+</struts>

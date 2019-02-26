@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+    "http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+
+    <!-- 配置请求action时的扩展名 -->
+    <constant name="struts.action.extension" value="action,do"></constant>
+    <package name="struts2" extends="struts-default" >
+        <action name="action"  class="com.huaxin.ztree.controller.QuestionController" method="addOrUpdate">
+            <result name="success" type="redirectAction">questionListAction</result>
+        </action>
+        <action name="questionListAction" class="com.huaxin.ztree.controller.QuestionController" method="Query">
+          	<result name="success">jsp/questionanswer/Question.jsp</result>
+       	</action>
+       	<action name="deleteAction" class="com.huaxin.ztree.controller.QuestionController" method="delete">
+          	<result name="success" type="redirectAction">questionListAction</result>
+       	</action>
+       	<action name="UpdateAction" class="com.huaxin.ztree.controller.QuestionController" method="toUpdate">
+          	<result name="success">jsp/questionanswer/Update.jsp</result>
+       	</action>
+       	<action name="qtypeQuery" class="com.huaxin.ztree.controller.QuestionController" method="qtypeQuery">
+          	<result name="success" >jsp/questionanswer/Question.jsp</result>
+       	</action>
+       	<!-- 分页查询所有记录数 -->
+       	<action name="getAllByPage" class="com.huaxin.ztree.controller.QuestionController" method="getAllByPage">
+          	<result name="success" >questionListAction</result>
+       	</action>
+    </package>
+</struts>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+    "http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+
+    <!-- 配置请求action时的扩展名 -->
+    <constant name="struts.action.extension" value="action,do"></constant>
+    <package name="test" extends="struts-default" >
+        <action name="testQueryAction"  class="com.huaxin.ztree.controller.TestController" method="query">
+            <result name="success">Test.jsp</result>
+        </action>
+        <action name="totalAction"  class="com.huaxin.ztree.controller.TestController" method="total">
+            <result name="success">total.jsp</result>
+        </action>
+        
+    </package>
+</struts>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+	"http://struts.apache.org/dtds/struts-2.0.dtd"
+	>
+<struts>
+	<package name="struts.action.extension" extends="struts-default,json-default">
+	
+		<action name="userAction"
+			class="com.huaxin.ztree.action.UserinfoController" method="add">
+			<result name="success" type="redirectAction">userListAction</result>
+		</action>
+		<!-- <action name="userListAction"
+			class="com.huaxin.ztree.action.UserinfoController" method="query">
+			<result name="success">jsp/userlyx/userSuccess.jsp</result>
+		</action> -->
+		
+		
+		
+		<action name="userListAction"
+			class="com.huaxin.ztree.action.UserinfoController" method="query">
+			<result name="success">jsp/userlyx/userSuccess1.jsp</result>
+		</action>
+
+
+
+
+		<action name="userdeleteAction"
+			class="com.huaxin.ztree.action.UserinfoController" method="delete">
+			<result name="success" type="redirectAction">userListAction</result>
+		</action>
+		
+		<action name="toUpdateAction"
+			class="com.huaxin.ztree.action.UserinfoController" method="toUpdate">
+			<result name="success">jsp/userlyx/saveOrUpdate.jsp</result>
+		</action>
+	</package>
+</struts>    

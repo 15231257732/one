@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+    "http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+   <!-- 包(与Java类的包功能一样) -->
+   <!-- 命名空间前缀名 namespace="/user" -->
+
+   <package name="users"  extends="struts-default,json-default" >
+
+
+
+       <action name="queryAction" class="com.huaxin.ztree.controller.UserController" method="queryss">
+         <result type="json" name="success">
+                <param name="root">result</param>
+            </result>
+       </action>
+       
+       <action name="bynamequeryAction" class="com.huaxin.ztree.controller.UserController" method="bynamequery">
+         <result type="json" name="success">
+                <param name="root">result</param>
+            </result>
+       </action>
+       
+       <action name="addAction" class="com.huaxin.ztree.controller.UserController" method="add">
+          <result name="success" type="redirectAction">jsp/user/addOrUpdate.jsp</result>
+       </action>
+       <action name="usredeleteAction" class="com.huaxin.ztree.controller.UserController" method="delete">
+          <!-- <result name="success" type="redirectAction">queryAction</result> -->
+          
+          <result type="json" name="success">
+                <param name="root">result</param>
+            </result>
+       </action>
+       
+       <action name="saveOrUpdateAction" class="com.huaxin.ztree.controller.UserController" method="saveOrUpdateAction">
+          <result name="success" type="redirectAction">queryAction</result>
+       </action>
+       
+       <!--json 格式  -->
+        <action name="getByidAction" class="com.huaxin.ztree.controller.UserController" method="getByid">
+         	<result type="json">
+					<param name="root">result</param>
+			</result>
+       </action>
+       
+      <action name="UserQueryAction" class="com.huaxin.ztree.controller.UserController" method="querys">
+            <result type="json" name="success">
+                <param name="root">result</param>
+            </result> 
+      </action>
+        
+   </package>
+</struts>
